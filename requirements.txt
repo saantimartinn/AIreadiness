@@ -1,0 +1,24 @@
+# AI Index Dashboard — System Requirements
+# This is a Node.js/React frontend project. Dependencies are managed via npm (see package.json).
+# This file documents the required runtime environment.
+
+# Runtime
+Node.js >= 18.0.0
+npm >= 9.0.0
+
+# Key frontend dependencies (installed via `npm install`)
+react@^19.2.5
+react-dom@^19.2.5
+react-router-dom@^7.15.0
+recharts@^3.8.1
+react-simple-maps@^3.0.0
+tailwindcss@^4.2.4
+lucide-react@^1.14.0
+typescript@~6.0.2
+vite@^8.0.10
+
+# Setup
+# 1. Install dependencies:   npm install
+# 2. Start dev server:        npm run dev
+# 3. Build for production:    npm run build
+# 4. Preview build:           npm run preview
