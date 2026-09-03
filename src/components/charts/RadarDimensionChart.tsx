@@ -95,7 +95,7 @@ export default function RadarDimensionChart({
 
         <Tooltip
           labelFormatter={(_, payload) =>
-            payload?.[0]?.payload?.fullEnabler ?? "Enabler"
+            payload?.[0]?.payload?.fullEnabler ?? "Pillar"
           }
           formatter={(value) =>
             hideScores

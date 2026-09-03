@@ -14,17 +14,19 @@ const EXPECTED_UN_MEMBER_COUNT = 193;
 const PILLARS = [
   "Government",
   "Infrastructure",
-  "Society",
-  "Market",
-  "Skills & Capacity Building",
+  "Digital Skills",
 ];
 
+const PILLAR_SOURCE_DIRECTORIES = {
+  Government: ["Government"],
+  Infrastructure: ["Infrastructure", "Market"],
+  "Digital Skills": ["Society", "Skills & Capacity Building"],
+};
+
 const PILLAR_WEIGHTS = {
-  Government: 0.2,
-  Infrastructure: 0.2,
-  Society: 0.2,
-  Market: 0.2,
-  "Skills & Capacity Building": 0.2,
+  Government: 1 / 3,
+  Infrastructure: 1 / 3,
+  "Digital Skills": 1 / 3,
 };
 
 const ALLOWED_COUNTRIES = {
@@ -776,13 +778,15 @@ async function buildProfiles() {
   const warnings = [];
 
   for (const pillar of PILLARS) {
-    const pillarDir = path.join(RAW_DATA_DIR, pillar);
-    const files = getExcelFiles(pillarDir);
+    const sourceDirectories = PILLAR_SOURCE_DIRECTORIES[pillar] ?? [pillar];
+    const files = sourceDirectories.flatMap((directory) =>
+      getExcelFiles(path.join(RAW_DATA_DIR, directory))
+    );
 
     pillarIndicatorCounts[pillar] = files.length;
 
     if (files.length === 0) {
-      warnings.push(`No Excel files found for enabler: ${pillar}`);
+      warnings.push(`No Excel files found for pillar: ${pillar}`);
       continue;
     }
 
@@ -885,9 +889,9 @@ async function buildProfiles() {
       dataCoverage: round(dataCoverage01 * 100, 1),
       dimensions,
       pillars,
-      strengths: sortedDimensions.slice(0, 3).map(([pillar]) => pillar),
+      strengths: sortedDimensions.slice(0, 1).map(([pillar]) => pillar),
       weaknesses: sortedDimensions
-        .slice(-3)
+        .slice(-1)
         .map(([pillar]) => pillar)
         .reverse(),
       trend3y: 0,
@@ -950,7 +954,7 @@ const countriesWithoutData = profiles.filter(
 console.log("Allowed UN Member States:", ALLOWED_COUNTRY_CODES.size);
 console.log("Generated country profiles:", profiles.length);
 console.log("Output:", path.relative(ROOT_DIR, OUTPUT_FILE));
-console.log("Enabler indicator counts:", pillarIndicatorCounts);
+console.log("Pillar indicator counts:", pillarIndicatorCounts);
 console.log("Continent counts:", regionCounts);
 
 if (countriesWithoutData.length > 0) {

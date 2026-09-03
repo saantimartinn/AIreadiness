@@ -1,12 +1,10 @@
-# AI Index Dashboard
+# AI Maturity Dashboard
 
-Interactive dashboard for comparing country-level AI development readiness across five pillars:
+Interactive dashboard for comparing country-level AI maturity across three equally weighted pillars:
 
-- Government
+- Policy and governance
 - Infrastructure
-- Society
-- Market
-- Skills & Capacity Building
+- Digital skills
 
 The frontend is built with React, TypeScript, Vite and Tailwind. The data is generated from Excel files into `src/data/generated/countryProfiles.ts`. The chat page uses a local Express server as a safe proxy to the OpenAI API, so the API key never reaches the browser.
 

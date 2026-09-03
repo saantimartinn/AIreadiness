@@ -4,7 +4,7 @@ import PageHeader from "@/components/layout/PageHeader";
 const downloads = [
   {
     title: "Country Rankings Dataset (CSV)",
-    description: "Full country rankings with all scores, enablers, and metadata.",
+    description: "Full country rankings with all scores, pillars, and metadata.",
     icon: FileSpreadsheet,
     size: "42 KB",
     format: "CSV",
@@ -18,14 +18,14 @@ const downloads = [
   },
   {
     title: "Full Dataset (JSON)",
-    description: "Complete dataset including all enablers, strengths, weaknesses, and metadata in JSON format.",
+    description: "Complete dataset including all pillars, strengths, weaknesses, and metadata in JSON format.",
     icon: FileJson,
     size: "95 KB",
     format: "JSON",
   },
   {
     title: "Methodology Documentation",
-    description: "Detailed technical documentation of the index methodology, indicators, and data sources.",
+    description: "Detailed technical documentation of the AI maturity methodology, indicators, and data sources.",
     icon: Database,
     size: "2.1 MB",
     format: "PDF",

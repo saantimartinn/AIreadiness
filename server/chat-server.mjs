@@ -22,17 +22,13 @@ const GENERATED_DATA_FILE = path.join(
 const AI_PILLARS = [
   "Government",
   "Infrastructure",
-  "Society",
-  "Market",
-  "Skills & Capacity Building",
+  "Digital Skills",
 ];
 
 const ENABLER_LABELS = {
   Government: "Policy and governance",
   Infrastructure: "Infrastructure",
-  Society: "Digital inclusion",
-  Market: "Ecosystem",
-  "Skills & Capacity Building": "Human capital development",
+  "Digital Skills": "Digital skills",
 };
 
 const READINESS_BANDS = [
@@ -230,10 +226,21 @@ function findMentionedPillars(question) {
       "network",
       "mobile",
       "traffic",
+      "market",
+      "ecosystem",
+      "price",
+      "affordability",
+      "cost",
+      "basket",
     ],
-    Society: ["society", "social", "digital inclusion", "population", "usage", "adoption"],
-    Market: ["market", "ecosystem", "price", "affordability", "cost", "basket"],
-    "Skills & Capacity Building": [
+    "Digital Skills": [
+      "digital skills",
+      "society",
+      "social",
+      "digital inclusion",
+      "population",
+      "usage",
+      "adoption",
       "skills",
       "human capital",
       "human capital development",
@@ -431,16 +438,14 @@ function buildDatasetContext(question, profiles) {
 
 function getSystemInstructions() {
   return `
-You are the AI Index Data Chat assistant.
+You are the AI Maturity Data Chat assistant.
 
 You answer using only the dataset context provided by the local server.
 
-The dataset uses five enablers:
+The dataset uses three pillars:
 - Policy and governance
 - Infrastructure
-- Digital inclusion
-- Ecosystem
-- Human capital development
+- Digital skills
 
 The dashboard intentionally hides internal numeric scores, normalized grades, raw VALUES and ranking positions from end users.
 
@@ -451,7 +456,7 @@ Rules:
 4. When discussing strengths or weaknesses, prefer indicator-level evidence when available.
 5. If the available context is insufficient, say exactly what is missing.
 6. Be direct, concise and useful.
-7. If the user asks for a comparison, compare by enabler and indicator-level details.
+7. If the user asks for a comparison, compare by pillar and indicator-level details.
 8. Use markdown formatting.
 9. Refer to continent, not income group.
 10. If data coverage is low, explicitly mention that the answer may be less reliable.

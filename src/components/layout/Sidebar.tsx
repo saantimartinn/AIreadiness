@@ -65,7 +65,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
         <div className="flex h-16 items-center justify-between border-b border-slate-200 px-5">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-slate-400">
-              AI Index
+              AI Maturity
             </p>
             <h1 className="text-lg font-black text-slate-950">Dashboard</h1>
           </div>
@@ -107,7 +107,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
 
         <div className="border-t border-slate-200 p-4">
           <p className="text-xs leading-5 text-slate-400">
-            Excel-based AI readiness classification across five enablers.
+            Excel-based AI maturity classification across three pillars.
           </p>
         </div>
       </aside>

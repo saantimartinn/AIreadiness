@@ -296,7 +296,7 @@ export default function ComparePage() {
     <div>
       <PageHeader
         title="Country Comparison"
-        subtitle="Compare countries by AI readiness class and enabler profile. Internal scores and rankings are hidden."
+        subtitle="Compare countries by AI maturity class and pillar profile. Internal scores and rankings are hidden."
       />
 
       <section className="mb-5 rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
@@ -436,7 +436,7 @@ export default function ComparePage() {
                   <div className="mt-4 space-y-3">
                     <div>
                       <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-400">
-                        Strongest enabler
+                        Strongest pillar
                       </p>
                       <div className="mt-2 flex items-center justify-between gap-2 rounded-2xl bg-slate-50 px-3 py-2">
                         <span className="text-sm font-semibold text-slate-700">
@@ -466,10 +466,10 @@ export default function ComparePage() {
           <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
             <div className="mb-5">
               <h2 className="text-lg font-black text-slate-900">
-                Enabler shape comparison
+                Pillar shape comparison
               </h2>
               <p className="mt-1 text-sm text-slate-500">
-                Visual comparison of each country&apos;s enabler profile. Enablers
+                Visual comparison of each country&apos;s pillar profile. Pillars
                 are ordered alphabetically clockwise.
               </p>
             </div>
@@ -512,7 +512,7 @@ export default function ComparePage() {
           <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
             <div className="mb-5">
               <h2 className="text-lg font-black text-slate-900">
-                Enabler comparison
+                Pillar comparison
               </h2>
               <p className="mt-1 text-sm text-slate-500">
                 Comparison by qualitative readiness band. Numeric scores remain
@@ -525,7 +525,7 @@ export default function ComparePage() {
                 <thead>
                   <tr>
                     <th className="px-3 py-2 text-left text-xs font-black uppercase tracking-[0.16em] text-slate-400">
-                      Enabler
+                      Pillar
                     </th>
 
                     {selected.map((country, index) => (
@@ -573,11 +573,11 @@ export default function ComparePage() {
           <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
             <div className="mb-5">
               <h2 className="text-lg font-black text-slate-900">
-                Enabler-by-country column view
+                Pillar-by-country column view
               </h2>
               <p className="mt-1 text-sm text-slate-500">
-                Enablers are ordered from strongest to weakest average. For each
-                enabler, countries are shown as thin adjacent columns. Numeric
+                Pillars are ordered from strongest to weakest average. For each
+                pillar, countries are shown as thin adjacent columns. Numeric
                 values are hidden; hover shows the readiness band.
               </p>
             </div>

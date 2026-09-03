@@ -12,61 +12,41 @@ export const dimensionMeta: DimensionMeta[] = [
       "Digital government capacity",
       "Institutional quality",
     ],
-    weight: 0.2,
+    weight: 1 / 3,
     color: "#b9108f",
   },
   {
     key: "Infrastructure",
     label: "Infrastructure",
     description:
-      "Measures the availability and quality of digital and connectivity infrastructure needed to support AI deployment.",
+      "Measures connectivity, digital infrastructure, affordability and market conditions needed to support AI deployment.",
     indicators: [
       "Broadband traffic",
       "Internet infrastructure",
       "Connectivity capacity",
       "Digital access infrastructure",
-    ],
-    weight: 0.2,
-    color: "#06b812",
-  },
-  {
-    key: "Society",
-    label: "Digital inclusion",
-    description:
-      "Measures digital adoption, internet usage and the ability of the population to participate in digital systems.",
-    indicators: [
-      "Individuals using the internet",
-      "Digital inclusion",
-      "Public digital adoption",
-    ],
-    weight: 0.2,
-    color: "#f59e0b",
-  },
-  {
-    key: "Market",
-    label: "Ecosystem",
-    description:
-      "Measures affordability, market conditions and the wider ecosystem that affects technology adoption.",
-    indicators: [
       "Mobile broadband affordability",
       "Digital service affordability",
       "Consumer market accessibility",
     ],
-    weight: 0.2,
-    color: "#ef4444",
+    weight: 1 / 3,
+    color: "#06b812",
   },
   {
-    key: "Skills & Capacity Building",
-    label: "Human capital development",
+    key: "Digital Skills",
+    label: "Digital skills",
     description:
-      "Measures the human capital base needed to build, adopt and manage AI systems.",
+      "Measures digital inclusion, internet adoption and the human capital needed to build, adopt and manage AI systems.",
     indicators: [
+      "Individuals using the internet",
+      "Digital inclusion",
+      "Public digital adoption",
       "STEM graduates",
       "Technical education capacity",
       "Workforce capability",
     ],
-    weight: 0.2,
-    color: "#6366f1",
+    weight: 1 / 3,
+    color: "#f59e0b",
   },
 ];
 

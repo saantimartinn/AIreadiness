@@ -6,7 +6,7 @@ const reports = [
     id: 1,
     title: "Global AI Readiness Report 2024",
     description:
-      "Comprehensive analysis of AI development capacity across 30+ nations, covering all five readiness enablers with country profiles and regional spotlights.",
+      "Comprehensive analysis of AI development capacity across 30+ nations, covering all three maturity pillars with country profiles and regional spotlights.",
     year: 2024,
     pages: 148,
     type: "Annual Report",
@@ -17,7 +17,7 @@ const reports = [
     id: 2,
     title: "Regional AI Development Gap Analysis",
     description:
-      "Detailed examination of intra-regional disparities in AI readiness, with focus on technology transfer, policy harmonization, and cooperative frameworks.",
+      "Detailed examination of intra-regional disparities in AI maturity, with focus on technology transfer, policy harmonization, and cooperative frameworks.",
     year: 2024,
     pages: 64,
     type: "Thematic Report",
@@ -84,7 +84,7 @@ export default function ReportsPage() {
     <div>
       <PageHeader
         title="Reports"
-        subtitle="Research publications and analytical reports from the AI Index"
+        subtitle="Research publications and analytical reports from AI Maturity"
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">

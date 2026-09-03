@@ -16,7 +16,7 @@ export default function AppLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
 
-  const title = PAGE_TITLES[location.pathname] ?? "AI Index";
+  const title = PAGE_TITLES[location.pathname] ?? "AI Maturity";
 
   return (
     <div className="flex h-screen overflow-hidden bg-slate-100">

@@ -121,7 +121,7 @@ export default function ChatPage() {
       id: createId(),
       role: "assistant",
       content:
-        "Ask me about countries, enablers, continents, classifications, strengths, weaknesses, or comparisons. I answer using the Excel-generated dataset through the OpenAI API endpoint.",
+        "Ask me about countries, pillars, continents, classifications, strengths, weaknesses, or comparisons. I answer using the Excel-generated dataset through the OpenAI API endpoint.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -193,7 +193,7 @@ export default function ChatPage() {
         id: createId(),
         role: "assistant",
         content:
-          "Chat cleared. Ask me about the Excel-generated AI readiness data.",
+          "Chat cleared. Ask me about the Excel-generated AI maturity data.",
       },
     ]);
   };
@@ -202,7 +202,7 @@ export default function ChatPage() {
     <div>
       <PageHeader
         title="Data Chat"
-        subtitle="Ask questions about countries, enablers, indicators and classifications using the Excel-generated dataset."
+        subtitle="Ask questions about countries, pillars, indicators and classifications using the Excel-generated dataset."
       />
 
       <div className="grid gap-5 xl:grid-cols-[1fr_320px]">
@@ -313,7 +313,7 @@ export default function ChatPage() {
                 </span>
               </p>
               <p>
-                Enablers:{" "}
+                Pillars:{" "}
                 <span className="font-bold text-slate-900">
                   {AI_DIMENSIONS.length}
                 </span>
@@ -327,7 +327,7 @@ export default function ChatPage() {
             </h3>
             <p className="mt-2 text-sm leading-6 text-amber-800">
               The model only sees the dataset context sent by the local server.
-              If a country, enabler or indicator is missing from the generated
+              If a country, pillar or indicator is missing from the generated
               profiles, the chat cannot use it.
             </p>
           </div>

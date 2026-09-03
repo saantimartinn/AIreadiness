@@ -401,7 +401,7 @@ export default function GlobalGlobe({ selected, onSelect }: GlobalGlobeProps) {
                   ">
                     <strong>${getCountryName(featureData)}</strong>
                     <div style="font-size: 12px; color: #94a3b8; margin-top: 4px;">
-                      No AI Index data
+                      No AI maturity data
                     </div>
                   </div>
                 `;
@@ -452,16 +452,16 @@ export default function GlobalGlobe({ selected, onSelect }: GlobalGlobeProps) {
       <div className="absolute left-5 top-5 z-10 hidden w-[360px] max-w-[calc(100%-2.5rem)] space-y-3 text-white xl:block">
         <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-5 shadow-2xl backdrop-blur-xl">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">
-            AI Index by ITU
+            AI Maturity by ITU
           </p>
 
           <h1 className="mt-2 text-2xl font-black tracking-tight">
-            Global AI Readiness Globe
+            Global AI Maturity Globe
           </h1>
 
           <p className="mt-2 text-sm leading-6 text-slate-300">
             Explore how countries compare across Policy and governance, Infrastructure,
-            Digital inclusion, Ecosystem, and Human capital development.
+            and Digital skills.
           </p>
 
           <div className="mt-4 flex flex-wrap gap-2 text-xs">
@@ -469,7 +469,7 @@ export default function GlobalGlobe({ selected, onSelect }: GlobalGlobeProps) {
               {mockCountries.length} UN member states
             </span>
             <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-slate-200">
-              5 enablers
+              3 pillars
             </span>
           </div>
         </div>
@@ -526,7 +526,7 @@ export default function GlobalGlobe({ selected, onSelect }: GlobalGlobeProps) {
 
             <div className="mt-5 space-y-3">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
-                Enabler profile
+                Pillar profile
               </p>
 
               {pillarProfile.map(({ enabler, value }) => (
@@ -567,7 +567,7 @@ export default function GlobalGlobe({ selected, onSelect }: GlobalGlobeProps) {
             </h2>
             <p className="mt-3 text-sm leading-6 text-slate-300">
               Click a highlighted country on the globe to inspect its AI
-              readiness profile.
+              maturity profile.
             </p>
           </div>
         )}

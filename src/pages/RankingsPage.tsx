@@ -26,14 +26,14 @@ const BANDS: BandMeta[] = [
   {
     key: "Mature",
     description:
-      "Countries with the strongest coverage-adjusted AI readiness profile.",
+      "Countries with the strongest coverage-adjusted AI maturity profile.",
     color: "#b9108f",
     softColor: "bg-fuchsia-50",
     borderColor: "border-fuchsia-200",
   },
   {
     key: "Developing",
-    description: "Countries with solid AI readiness and clear strengths.",
+    description: "Countries with solid AI maturity and clear strengths.",
     color: "#06b812",
     softColor: "bg-green-50",
     borderColor: "border-green-200",
@@ -49,7 +49,7 @@ const BANDS: BandMeta[] = [
   {
     key: "Early adopting",
     description:
-      "Countries with relevant gaps across several AI readiness areas or limited coverage-adjusted performance.",
+      "Countries with relevant gaps across several AI maturity areas or limited coverage-adjusted performance.",
     color: "#ef4444",
     softColor: "bg-red-50",
     borderColor: "border-red-200",
@@ -120,7 +120,7 @@ export default function RankingsPage() {
     <div>
       <PageHeader
         title="Country Classification"
-        subtitle="Countries are grouped into AI readiness bands using the final coverage-adjusted classification."
+        subtitle="Countries are grouped into AI maturity bands using the final coverage-adjusted classification."
       />
 
       <div className="mb-5 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">

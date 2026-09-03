@@ -50,7 +50,7 @@ const BAND_META: Record<ReadinessBand, BandMeta> = {
     textClass: "text-green-700",
     borderClass: "border-green-200",
     description:
-      "Solid performance. This area supports the country's overall AI readiness.",
+      "Solid performance. This area supports the country's overall AI maturity.",
   },
   Adopting: {
     label: "Adopting",
@@ -68,7 +68,7 @@ const BAND_META: Record<ReadinessBand, BandMeta> = {
     textClass: "text-red-700",
     borderClass: "border-red-200",
     description:
-      "Weak performance. This area is currently limiting the country's AI readiness.",
+      "Weak performance. This area is currently limiting the country's AI maturity.",
   },
 };
 
@@ -150,7 +150,7 @@ function getProfileSummary(country: CountryAIReadiness) {
   const allIndicators = getAllIndicators(country);
 
   if (allIndicators.length === 0) {
-    return `${country.name} has an AI readiness classification, but there are no indicator-level details available yet.`;
+    return `${country.name} has an AI maturity classification, but there are no indicator-level details available yet.`;
   }
 
   const strongest = getBestIndicators(country)
@@ -257,7 +257,7 @@ export default function MapPage() {
     <div>
       <PageHeader
         title="Extended Profile"
-        subtitle="Explore each country's AI readiness profile by enabler and indicator-level detail."
+        subtitle="Explore each country's AI maturity profile by pillar and indicator-level detail."
       />
 
       <div className="grid items-stretch gap-5 xl:grid-cols-[360px_1fr]">
@@ -380,7 +380,7 @@ export default function MapPage() {
 
                 <p className="mt-3 text-sm leading-6 text-slate-500">
                   Use the search panel to choose a country and open its extended
-                  AI readiness profile.
+                  AI maturity profile.
                 </p>
               </div>
             </div>
@@ -462,10 +462,10 @@ export default function MapPage() {
                   <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4">
                     <div className="mb-3">
                       <h2 className="text-sm font-black text-slate-900">
-                        Five-enabler profile
+                        Three-pillar profile
                       </h2>
                       <p className="mt-1 text-xs leading-5 text-slate-500">
-                        Radar view of the country&apos;s relative enabler
+                        Radar view of the country&apos;s relative pillar
                         profile. Internal scores are hidden.
                       </p>
                     </div>
@@ -484,10 +484,10 @@ export default function MapPage() {
                 <div className="mb-5 flex flex-wrap items-start justify-between gap-3">
                   <div>
                     <h2 className="text-lg font-black text-slate-900">
-                      Enabler profile
+                      Pillar profile
                     </h2>
                     <p className="mt-1 text-sm text-slate-500">
-                      Coverage-adjusted performance by enabler. Internal
+                      Coverage-adjusted performance by pillar. Internal
                       normalized scores are intentionally hidden.
                     </p>
                   </div>
@@ -570,11 +570,11 @@ export default function MapPage() {
               <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
                 <div className="mb-5">
                   <h2 className="text-lg font-black text-slate-900">
-                    Development by enabler
+                    Development by pillar
                   </h2>
                   <p className="mt-1 text-sm text-slate-500">
                     Indicator-level breakdown showing what is working well and
-                    what needs improvement inside each enabler.
+                    what needs improvement inside each pillar.
                   </p>
                 </div>
 
@@ -609,7 +609,7 @@ export default function MapPage() {
 
                         {pillarData.indicators.length === 0 ? (
                           <div className="rounded-2xl border border-dashed border-slate-300 bg-white/50 p-5 text-center text-sm text-slate-400">
-                            No indicator data available for this enabler.
+                            No indicator data available for this pillar.
                           </div>
                         ) : (
                           <div className="grid gap-3 md:grid-cols-2">
@@ -637,4 +637,4 @@ export default function MapPage() {
       </div>
     </div>
   );
-} 
+}

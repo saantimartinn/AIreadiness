@@ -34,12 +34,12 @@ export default function CountryProfilePage() {
 
   const scoreInterpretation =
     country.score >= 70
-      ? "This country is a global AI leader with strong capacity across most enablers."
+      ? "This country is a global AI leader with strong capacity across most pillars."
       : country.score >= 55
-      ? "This country has a well-developed AI ecosystem with notable strengths in key enablers."
+      ? "This country has a well-developed AI landscape with notable strengths in key pillars."
       : country.score >= 40
       ? "This country has a developing AI capacity with significant room for improvement."
-      : "This country faces substantial challenges in AI readiness across most enablers.";
+      : "This country faces substantial challenges in AI maturity across most pillars.";
 
   return (
     <div>
@@ -104,8 +104,8 @@ export default function CountryProfilePage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
         {/* Radar */}
         <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 min-w-0">
-          <h3 className="text-sm font-semibold text-slate-800 mb-1">Enabler Radar</h3>
-          <p className="text-xs text-slate-500 mb-3">Performance across all 5 enablers</p>
+          <h3 className="text-sm font-semibold text-slate-800 mb-1">Pillar Radar</h3>
+          <p className="text-xs text-slate-500 mb-3">Performance across all 3 pillars</p>
           <div style={{ height: 280 }} className="w-full overflow-hidden">
             <RadarDimensionChart countries={[country]} />
           </div>
@@ -123,8 +123,8 @@ export default function CountryProfilePage() {
 
       {/* Dimension Bars */}
       <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 mb-4 min-w-0">
-        <h3 className="text-sm font-semibold text-slate-800 mb-1">Enabler Breakdown</h3>
-        <p className="text-xs text-slate-500 mb-3">Individual classifications by enabler</p>
+        <h3 className="text-sm font-semibold text-slate-800 mb-1">Pillar Breakdown</h3>
+        <p className="text-xs text-slate-500 mb-3">Individual classifications by pillar</p>
         <div style={{ height: 240 }} className="w-full overflow-hidden">
           <BarComparisonChart countries={[country]} singleCountry />
         </div>
@@ -218,7 +218,7 @@ export default function CountryProfilePage() {
       {/* Dimension detail */}
       <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4">
         <h3 className="text-sm font-semibold text-slate-800 mb-3">
-          Enabler Detail
+          Pillar Detail
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {getScoreSortedEnablers(country).map((dim) => {

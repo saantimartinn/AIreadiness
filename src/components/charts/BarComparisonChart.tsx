@@ -89,7 +89,7 @@ export default function BarComparisonChart({
 
           <Tooltip
             labelFormatter={(_, payload) =>
-              payload?.[0]?.payload?.fullEnabler ?? "Enabler"
+              payload?.[0]?.payload?.fullEnabler ?? "Pillar"
             }
             formatter={(value) =>
               hideScores
@@ -145,7 +145,7 @@ export default function BarComparisonChart({
 
         <Tooltip
           labelFormatter={(_, payload) =>
-            payload?.[0]?.payload?.fullEnabler ?? "Enabler"
+            payload?.[0]?.payload?.fullEnabler ?? "Pillar"
           }
           formatter={(value) =>
             hideScores

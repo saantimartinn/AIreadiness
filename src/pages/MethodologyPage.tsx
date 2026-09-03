@@ -41,21 +41,21 @@ export default function MethodologyPage() {
     <div>
       <PageHeader
         title="Methodology"
-        subtitle="How the AI Development Readiness Index is generated from normalized indicators, enabler aggregation and data coverage."
+        subtitle="How AI Maturity is calculated from normalized indicators, pillar aggregation and data coverage."
       />
 
       <div className="space-y-5">
-        <SectionCard title="Purpose of the index" icon={<BookOpen size={18} />}>
+        <SectionCard title="Purpose of AI Maturity" icon={<BookOpen size={18} />}>
           <p className="text-sm leading-relaxed text-slate-600">
-            The <b>AI Development Readiness Index</b> is a composite view of a
+            <b>AI Maturity</b> is a composite view of a
             country&apos;s capacity to develop, adopt and govern artificial
             intelligence. The current version is built from indicators grouped
-            into five enablers: Policy and governance, Infrastructure, Digital
-            inclusion, Ecosystem, and Human capital development.
+            into three pillars: Policy and governance, Infrastructure, and
+            Digital skills.
           </p>
 
           <p className="mt-3 text-sm leading-relaxed text-slate-600">
-            The dashboard does not treat the index as an absolute truth. It is a
+            The dashboard does not treat the maturity assessment as an absolute truth. It is a
             structured comparison tool. Countries with limited evidence are
             penalized through a coverage adjustment so that sparse data does not
             produce an artificially strong classification.
@@ -68,7 +68,7 @@ export default function MethodologyPage() {
               <Database size={18} />
             </div>
             <h2 className="text-base font-black text-slate-900">
-              Five-enabler structure
+              Three-pillar structure
             </h2>
           </div>
 
@@ -157,43 +157,43 @@ export default function MethodologyPage() {
         </div>
 
         <SectionCard
-          title="Enabler scoring and coverage adjustment"
+          title="Pillar scoring and coverage adjustment"
           icon={<BarChart2 size={18} />}
         >
           <p className="text-sm leading-relaxed text-slate-600">
-            Each enabler first calculates an internal raw score from the
-            available indicator grades for that country. The enabler is then
+            Each pillar first calculates an internal raw score from the
+            available indicator grades for that country. The pillar is then
             adjusted by its data coverage. This prevents a country with very
             limited evidence from receiving the same confidence as a country
             with broader evidence.
           </p>
 
           <FormulaBox>
-            raw enabler score = average of available indicator grades
+            raw pillar score = average of available indicator grades
             <br />
-            enabler coverage = available indicators / total indicators in enabler
+            pillar coverage = available indicators / total indicators in pillar
             <br />
-            final enabler score = raw enabler score × enabler coverage
+            final pillar score = raw pillar score × pillar coverage
           </FormulaBox>
 
           <p className="mt-3 text-sm leading-relaxed text-slate-600">
-            The final enabler score is used internally to assign the qualitative
-            enabler band shown in the dashboard.
+            The final pillar score is used internally to assign the qualitative
+            pillar band shown in the dashboard.
           </p>
         </SectionCard>
 
         <SectionCard title="Overall country score" icon={<BarChart2 size={18} />}>
           <p className="text-sm leading-relaxed text-slate-600">
-            The five enablers are aggregated using equal weights. The resulting
+            The three pillars are aggregated using equal weights. The resulting
             country score is then adjusted by the country&apos;s average data
             coverage. This means the final classification combines both
             performance and evidence availability.
           </p>
 
           <FormulaBox>
-            raw country score = weighted average of enabler scores
+            raw country score = weighted average of pillar scores
             <br />
-            data coverage = average enabler coverage
+            data coverage = average pillar coverage
             <br />
             final country score = raw country score × data coverage
           </FormulaBox>
@@ -206,7 +206,7 @@ export default function MethodologyPage() {
 
         <SectionCard title="Readiness bands" icon={<Scale size={18} />}>
           <p className="text-sm leading-relaxed text-slate-600">
-            Countries, enablers and indicators are assigned to one of four
+            Countries, pillars and indicators are assigned to one of four
             qualitative readiness bands. The internal thresholds are used
             consistently across the dashboard but are not displayed in the user
             interface.
@@ -219,7 +219,7 @@ export default function MethodologyPage() {
                 color: "#b9108f",
               },
               {
-                label: "Adopting",
+                label: "Developing",
                 color: "#06b812",
               },
               {
@@ -264,7 +264,7 @@ export default function MethodologyPage() {
               },
               {
                 title: "Indicator grades must be audited",
-                desc: "The dashboard assumes indicator grades are already correctly normalized and direction-adjusted. A bad grade column will directly corrupt the index.",
+                desc: "The dashboard assumes indicator grades are already correctly normalized and direction-adjusted. A bad grade column will directly corrupt the maturity assessment.",
               },
               {
                 title: "Latest-year mismatch",
@@ -272,7 +272,7 @@ export default function MethodologyPage() {
               },
               {
                 title: "Equal weights are transparent, not perfect",
-                desc: "Each enabler currently receives equal weight. This is easy to explain but should be tested against alternative weighting strategies later.",
+                desc: "Each pillar currently receives equal weight. This is easy to explain but should be tested against alternative weighting strategies later.",
               },
             ].map((item) => (
               <div
