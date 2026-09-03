@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
+import { fileURLToPath } from "node:url";
 import dotenv from "dotenv";
 import OpenAI from "openai";
 
@@ -9,13 +10,12 @@ dotenv.config({ quiet: true });
 const PORT = Number(process.env.CHAT_SERVER_PORT ?? 8787);
 const MODEL = process.env.OPENAI_MODEL ?? "gpt-4.1-mini";
 const ROOT_DIR = process.cwd();
-const GENERATED_DATA_FILE = path.join(
-  ROOT_DIR,
-  "src",
-  "data",
-  "generated",
-  "countryProfiles.ts"
-);
+const GENERATED_DATA_FILE = [
+  fileURLToPath(
+    new URL("../src/data/generated/countryProfiles.ts", import.meta.url)
+  ),
+  path.join(ROOT_DIR, "src", "data", "generated", "countryProfiles.ts"),
+].find((candidate) => fs.existsSync(candidate));
 
 const AI_PILLARS = [
   "Government",
@@ -103,12 +103,9 @@ function createOpenAIClient() {
 }
 
 function loadCountryProfiles() {
-  if (!fs.existsSync(GENERATED_DATA_FILE)) {
+  if (!GENERATED_DATA_FILE) {
     throw new Error(
-      `Generated data file not found: ${path.relative(
-        ROOT_DIR,
-        GENERATED_DATA_FILE
-      )}. Run npm run generate:data first.`
+      "Generated country profiles are unavailable in this deployment."
     );
   }
 
